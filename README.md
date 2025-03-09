@@ -3,16 +3,50 @@
 ## Overview
 This repository contains a **layered testbench** for verifying a **D Flip-Flop (DFF)** using **SystemVerilog**. The testbench follows a modular approach with components like **driver, monitor, generator, and scoreboard** to ensure a robust verification environment.
 
-## Design Under Test (DUT)
+## What is a Layered Testbench?
+
+A layered testbench in SystemVerilog is an organized way to verify a design under test (DUT) by dividing testbench functionality into separate components. This improves code reusability and debugging efficiency.
+
+### Layers in the Testbench:
+
+1. Interface: Connects signals between the DUT and testbench.
+
+2. Driver: Generates stimulus (inputs) and drives them to the DUT.
+
+3. Monitor: Captures the output responses from the DUT.
+
+4. Scoreboard: Compares actual DUT output with expected results.
+
+5. Generator: Creates different sets of input patterns.
+
+6. Transaction: Defines the structure of test stimulus and expected outputs.
+
+7. Environment: Connects all the components together.
+
+8. Test: Defines the test scenario to be executed.
+
+9. Testbench: Top-level module to instantiate all components.
+   
+## Design Under Test (DUT) - D Flip-Flop
+The **D Flip-Flop is a sequential circuit** that stores the input data (D) on the rising edge of the clock (clk). The output (Q) follows D after the clock edge, with additional reset and preset functionality.
 The **D Flip-Flop (DFF)** is implemented in `design.sv` as follows:
 
+DUT Code (D Flip-Flop)
+
 ```systemverilog
-module d_ff(input bit d, clk, reset, preset, output bit q);
-  always_ff @(posedge clk or posedge reset or posedge preset)
-    if (reset) q <= 1'b0;
-    else if (preset) q <= 1'b1;
-    else if (reset && preset) q <= 1'b0;
-    else q <= d;
+module d_ff (
+    input bit d, clk, reset, preset,
+    output bit q
+);
+    always_ff @(posedge clk, posedge reset, posedge preset)
+        if (reset)
+            q <= 1'b0;
+        else if (preset)
+            q <= 1'b1;
+        else if (reset && preset)
+            q <= 1'b0;
+        else
+            q <= d;
 endmodule
 ```
 
