@@ -279,7 +279,7 @@ class environment;
 endclass
 ```
 ## Visual REpresentation of Layered Testbench
-![Image](https://github.com/user-attachments/assets/d25a9427-441b-4d74-99bd-ec88d3df7952)
+![Image](https://github.com/user-attachments/assets/4b82baec-d935-4f79-888f-5aca4b4770e5)
 
 ## **Conclusion**
 This testbench follows a structured **layered verification methodology**, ensuring modularity, reusability, and efficient debugging. 🚀
