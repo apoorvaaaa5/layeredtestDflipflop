@@ -49,6 +49,19 @@ module d_ff (
             q <= d;
 endmodule
 ```
+### Explanation of the Design:
+
+- The module d_ff defines a D Flip-Flop with additional reset and preset functionalities.
+
+- The always_ff block is triggered on the rising edge of clk, reset, or preset.
+
+- If reset is high, the output q is set to 0.
+
+- If preset is high, the output q is set to 1.
+
+- If both reset and preset are high, q is set to 0 (reset has priority).
+
+- Otherwise, q follows the input d on the next clock edge.
 
 ## Testbench Structure
 The testbench follows a layered approach and consists of the following components:
