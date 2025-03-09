@@ -224,11 +224,6 @@ class environment;
 endclass
 ```
 
-## **Running the Simulation**
-1. Compile using **VCS/Questa/ModelSim**.
-2. Run `tbench_top`.
-3. View waveform using `$dumpfile("dump.vcd")` and GTKWave.
-
 ## **Conclusion**
 This testbench follows a structured **layered verification methodology**, ensuring modularity, reusability, and efficient debugging. 🚀
 
