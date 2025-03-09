@@ -84,7 +84,8 @@ endinterface
 - **Modports:**
   - `DRIVER` → Used by the **Driver** to drive inputs (`d`).
   - `MONITOR` → Used by the **Monitor** to passively observe signals.
--The clocking cb block is used by the driver to control d and read q.
+    
+- The clocking cb block is used by the driver to control d and read q.
 
 - The clocking monitor_cb block is used by the monitor to observe d and q.
 
