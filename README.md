@@ -278,7 +278,7 @@ class environment;
   endtask
 endclass
 ```
-## Visual REpresentation of Layered Testbench
+## Visual Representation of Layered Testbench
 ![Image](https://github.com/user-attachments/assets/4b82baec-d935-4f79-888f-5aca4b4770e5)
 
 ## **Conclusion**
