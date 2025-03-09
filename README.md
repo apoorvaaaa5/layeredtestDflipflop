@@ -84,6 +84,13 @@ endinterface
 - **Modports:**
   - `DRIVER` → Used by the **Driver** to drive inputs (`d`).
   - `MONITOR` → Used by the **Monitor** to passively observe signals.
+-The clocking cb block is used by the driver to control d and read q.
+
+- The clocking monitor_cb block is used by the monitor to observe d and q.
+
+- modport DRIVER allows the driver to drive inputs and observe outputs.
+
+- modport MONITOR allows the monitor to observe signals.
 
 ### 2. **Mailbox in the Testbench**
 **Mailboxes** provide a communication mechanism between different testbench components. They act as message-passing queues, enabling transaction-based verification.
